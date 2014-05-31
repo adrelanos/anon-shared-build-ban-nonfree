@@ -1,0 +1,27 @@
+## This file is part of Whonix.
+## Copyright (C) 2012 - 2014 Patrick Schleizer <adrelanos@riseup.net>
+## See the file COPYING for copying conditions.
+
+Source: anon-shared-build-ban-nonfree
+Section: misc
+Priority: optional
+Maintainer: Patrick Schleizer <adrelanos@riseup.net>
+Build-Depends: debhelper (>= 8), faketime, git
+Homepage: https://github.com/Whonix/anon-shared-build-ban-nonfree
+Vcs-Browser: https://github.com/Whonix/anon-shared-build-ban-nonfree
+Vcs-Git: https://github.com/Whonix/anon-shared-build-ban-nonfree.git
+Standards-Version: 3.9.4
+
+Package: anon-shared-build-ban-nonfree
+Architecture: all
+Depends: vrms, ${misc:Depends}
+Description: Check for nonfree packages during build of Anonymity Distributions
+ Checking, that no packages from the contrib or non-free APT repository have
+ been accidentally installed using a chroot-post.d script, that uses the
+ vrms tool. If any were installed, it would invoke an error during the build
+ process.
+ .
+ This is useful, because redistributing nonfree software is problematic for
+ legal reasons.
+ .
+ Custom, self-made, private builds are free to omit this optional package.
