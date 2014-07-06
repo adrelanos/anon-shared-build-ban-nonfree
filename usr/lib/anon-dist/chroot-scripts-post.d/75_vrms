@@ -30,7 +30,7 @@ else
 fi
 ## }}
 
-own_filename="$(basename $0)"
+own_filename="$(basename $BASH_SOURCE)"
 for skip_script in $SKIP_SCRIPTS; do
    if [ "$skip_script" = "$own_filename" ]; then
       true "INFO: Skipping $own_filename, because SKIP_SCRIPTS includes it."
@@ -47,12 +47,12 @@ vrms
 vrms_result="$(vrms --quiet)"
 
 if [ "$vrms_result" = "" ]; then
-   true "INFO $0: No non-free or contrib packages detected."
+   true "INFO $BASH_SOURCE: No non-free or contrib packages detected."
 else
    if [ "$CI" = "true" ]; then
-      true "INFO $0: Non-free or contrib packages detected. Continuing, because CI detected."
+      true "INFO $BASH_SOURCE: Non-free or contrib packages detected. Continuing, because CI detected."
    else
-      error "ERROR $0: Non-free or contrib packages detected! See above!"
+      error "ERROR $BASH_SOURCE: Non-free or contrib packages detected! See above!"
    fi
 fi
 
