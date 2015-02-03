@@ -46,8 +46,14 @@ vrms
 ## For machine readable output, taking action depending on.
 vrms_result="$(vrms --quiet --sparse)"
 
+vrms_expected_result_one="
+virtualbox-guest-utils
+virtualbox-guest-x11"
+
 if [ "$vrms_result" = "" ]; then
    true "INFO $BASH_SOURCE: No non-free or contrib packages detected."
+elif [ "$vrms_result" = "$vrms_expected_result_one" ]; then
+   true "INFO $BASH_SOURCE: Only expected contrib packages detected."
 else
    if [ "$CI" = "true" ]; then
       true "INFO $BASH_SOURCE: Non-free or contrib packages detected. Continuing, because CI detected."
