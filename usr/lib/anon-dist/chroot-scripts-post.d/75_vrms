@@ -44,7 +44,7 @@ true "INFO: Running \"vrms\", as a sanity test, to check if packages from the co
 vrms
 
 ## For machine readable output, taking action depending on.
-vrms_result="$(vrms --quiet)"
+vrms_result="$(vrms --quiet --sparse)"
 
 if [ "$vrms_result" = "" ]; then
    true "INFO $BASH_SOURCE: No non-free or contrib packages detected."
