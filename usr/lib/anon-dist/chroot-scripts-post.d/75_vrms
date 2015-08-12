@@ -62,11 +62,7 @@ elif [ "$vrms_result" = "$vrms_expected_result_one" ]; then
 elif [ "$vrms_result" = "$vrms_expected_result_two" ]; then
    true "INFO $BASH_SOURCE: Only expected contrib packages detected."
 else
-   if [ "$CI" = "true" ]; then
-      true "INFO $BASH_SOURCE: Non-free or contrib packages detected. Continuing, because CI detected."
-   else
-      error "ERROR $BASH_SOURCE: Non-free or contrib packages detected! See above!"
-   fi
+   error "ERROR $BASH_SOURCE: Non-free or contrib packages detected! See above!"
 fi
 
 ## Explicitly "exit 0", so eventually trapped errors can be ignored.
