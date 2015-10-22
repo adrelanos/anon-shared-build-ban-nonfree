@@ -1,3 +1,15 @@
+commit 610f78dcbb1ebd6a2a76ecbbd3199a0a3660cebc
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Sep 6 14:30:43 2015 +0000
+
+    added exception allowed non-free packages for Qubes: firmware-linux and firmware-linux-nonfree
+
+commit b0fbb2cfc9da8001db527b81a3ca23c386aac136
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Aug 25 14:07:40 2015 +0000
+
+    bumped changelog version
+
 commit 2a7e72888083d0adbf4c09ed0f51caf5fbd1261e
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Mon Aug 24 17:47:11 2015 +0000
